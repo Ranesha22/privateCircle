@@ -1,0 +1,108 @@
+<div class="row sticky-top" id="header">
+    <div class="col-8 px-0">
+        <button class="btn btn-lg btn-header btn-active me-2">
+            <mat-icon aria-hidden="false" class="material-symbols-outlined icon-header">format_list_bulleted
+            </mat-icon>
+            <label class="text-btn">SAVED LIST</label>
+        </button>
+        <button class="btn btn-lg btn-header btn-inactive me-2">
+            <mat-icon aria-hidden="false" class="material-symbols-outlined icon-header">
+                filter_alt
+            </mat-icon>
+            <label class="text-btn">SAVED FILTERS</label>
+        </button>
+        <button class="btn btn-lg btn-header btn-inactive">
+            <mat-icon aria-hidden="false" class="material-symbols-outlined icon-header">
+                history
+            </mat-icon>
+            <label class="text-btn">SEARCH HISTORY</label>
+        </button>
+    </div>
+
+    <div class="col-4 d-flex px-0 ">
+        <input matInput type="search" class="form-control form-control-lg align-self-center rounded-0" id="search"
+            placeholder="Search" (keyup)="doFilter($any($event.target).value)" (search)="doFilter('')" />
+    </div>
+</div>
+
+<div id="entityList">
+    <div class="row" id="list">
+        <div class="col-9 px-0 mat-elevation-z8">
+            <mat-table #table [dataSource]="dataSource">
+                <!-- Date Column -->
+                <ng-container matColumnDef="date">
+                    <mat-header-cell *matHeaderCellDef class="w-100px"> Date </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="w-100px">
+                        <mat-icon *ngIf="element.active" aria-hidden="false"
+                            class="table-icons material-symbols-outlined p-0">
+                            refresh
+                        </mat-icon>
+                        <label *ngIf="!element.active" class="table-date">{{element.date}} </label>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- List Column -->
+                <ng-container matColumnDef="list">
+                    <mat-header-cell *matHeaderCellDef class="w-450"> List Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element" [ngStyle]="{'color' : element.active?'#51B3EB':''}"
+                        class="list-col w-450">
+                        {{element.desc}} </mat-cell>
+                </ng-container>
+
+                <!-- Entity Column -->
+                <ng-container matColumnDef="entities">
+                    <mat-header-cell *matHeaderCellDef class="entity"> No. of Entities </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="entity d-flex justify-content-end">
+                        <label>{{element.entity}}</label>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- Action Column -->
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <mat-icon aria-hidden="false" class="table-icons material-symbols-outlined forward">
+                            forward_to_inbox</mat-icon>
+                        <mat-icon *ngIf="!element.active" aria-hidden="false"
+                            class="table-icons material-symbols-outlined">share
+                        </mat-icon>
+                        <mat-icon *ngIf="!element.active" aria-hidden="false"
+                            class="table-icons material-symbols-outlined">edit
+                        </mat-icon>
+                        <mat-icon *ngIf="!element.active" aria-hidden="false"
+                            class="table-icons material-symbols-outlined">delete
+                        </mat-icon>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- Detail Column -->
+                <ng-container matColumnDef="detail">
+                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-sm btn-inactive rounded-0"
+                            (click)="getDetail(element.desc)">Details</button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="row.selected"
+                (click)="activeRow(row)"></mat-row>
+            </mat-table>
+        </div>
+
+        <div class="col-3 desc">
+            <button class="btn w-100 mt-4 p-3 btn-inactive">
+                <label>No Description yet </label>
+                <a class="ps-2"> + Add Description</a>
+            </button>
+
+            <ul *ngIf="details.length>0" class="list-unstyled mt-4">
+                <li><a>Detail for {{entity}}</a></li>
+                <li *ngFor="let detail of details">
+                    <a>{{detail}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+* { margin: 0; padding: 0; } 
+*:focus, *:visited { outline: 0 !important; } 
+
+html,body { font-size: 12px; max-width: 100%!important; background-color: #fff; font-family: 'Roboto',Arial, Helvetica, sans-serif; scroll-behavior: smooth; height: 100%!important; } 
+.container-fluid { background-color: #fff;overflow-y: clip;height: 100%;padding: 0 !important;} 

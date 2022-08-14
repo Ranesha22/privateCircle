@@ -18,7 +18,8 @@ input::placeholder { color:#ced4da; }
 
 mat-header-cell { color: #A1A1A1; } 
 mat-row,mat-header-row,mat-header-cell { border-bottom: 1px solid #a3a1a145!important; } 
-.selected {background-color: #F5F5F5;}
+.selected { background-color: #F5F5F5; } 
+.selected .table-icons { color: #000; } 
 .table-icons, .table-date { color: #A1A1A1; } 
 .entity { width:110px; min-width: 80px; max-width:110px; padding-right: 30px; } 
 .w-100px { width:100px; min-width: 100px; max-width:100px } 

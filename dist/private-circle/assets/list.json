@@ -1,0 +1,122 @@
+[
+    {
+        "SNo":1,
+        "desc" : "Competitive Intelligence",
+        "entity" : 0,
+        "active" : true
+    },
+    {
+        "SNo":2,
+        "desc" : "My Vendors",
+        "entity" : 0,
+        "active" : true
+    },
+    {
+        "SNo":3,
+        "desc" : "My Customers",
+        "entity" : 0,
+        "active" : true
+    },
+    {
+        "SNo":4,
+        "desc" : "Test_30_results",
+        "entity" : 28,
+        "active" : false
+    },
+    {
+        "SNo":5,
+        "desc" : "To index",
+        "entity" : 100,
+        "active" : false
+    },
+    {
+        "SNo":6,
+        "desc" : "KPMG Requested Companies",
+        "entity" : 0,
+        "active" : false
+    },
+    {
+        "SNo":7,
+        "desc" : "Error Case",
+        "entity" : 34,
+        "active" : false
+    },
+    {
+        "SNo":8,
+        "desc" : "Two Companies",
+        "entity" : 24,
+        "active" : false
+    },
+    {
+        "SNo":9,
+        "desc" : "Custom",
+        "entity" : 22,
+        "active" : false
+    },
+    {
+        "SNo":10,
+        "desc" : "Mumbai",
+        "entity" : 40,
+        "active" : false
+    },
+    {
+        "SNo":11,
+        "desc" : "Test1",
+        "entity" : 50,
+        "active" : false
+    },
+    {
+        "SNo":12,
+        "desc" : "Test2",
+        "entity" : 52,
+        "active" : false
+    },
+    {
+        "SNo":13,
+        "desc" : "Test3",
+        "entity" : 25,
+        "active" : false
+    },
+    {
+        "SNo":14,
+        "desc" : "Test4",
+        "entity" : 12,
+        "active" : false
+    },
+    {
+        "SNo":15,
+        "desc" : "Test5",
+        "entity" : 51,
+        "active" : false
+    },
+    {
+        "SNo":16,
+        "desc" : "Test6",
+        "entity" : 152,
+        "active" : false
+    },
+    {
+        "SNo":17,
+        "desc" : "Test7",
+        "entity" : 82,
+        "active" : false
+    },
+    {
+        "SNo":18,
+        "desc" : "Test8",
+        "entity" : 98,
+        "active" : false
+    },
+    {
+        "SNo":19,
+        "desc" : "Test9",
+        "entity" : 76,
+        "active" : false
+    },
+    {
+        "SNo":20,
+        "desc" : "Test10",
+        "entity" : 43,
+        "active" : false
+    }
+]

@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run sentry:sourcemaps",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ranesha --project javascript ./dist && sentry-cli sourcemaps upload --org ranesha --project javascript ./dist"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@sentry/browser": "^7.109.0",
+    "@sentry/cli": "^2.31.0",
     "bootstrap": "^5.2.0",
     "material-icons": "^1.11.9",
     "rxjs": "~7.5.0",
